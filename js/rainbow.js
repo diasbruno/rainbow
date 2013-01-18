@@ -19,12 +19,6 @@
  * @url rainbowco.de
  */
 
-    /**
-     * array of replacements to process at the end
-     *
-     * @type {Object}
-     */
-    var replacements = {},
 !(function( name, context, definition ) {
 
   if (typeof module != 'undefined' && module.exports) {
@@ -45,6 +39,14 @@
 
 // this is executed in line 36.
 //window['Rainbow'] = (function() {
+
+    var 
+        /**
+         * array of replacements to process at the end
+         *
+         * @type {Object}
+         */
+        replacements = {},
 
         /**
          * an array of start and end positions of blocks to be replaced
