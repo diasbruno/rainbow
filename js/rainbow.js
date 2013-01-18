@@ -18,7 +18,6 @@
  * @preserve @version 1.1.8
  * @url rainbowco.de
  */
-window['Rainbow'] = (function() {
 
     /**
      * array of replacements to process at the end
@@ -26,6 +25,26 @@ window['Rainbow'] = (function() {
      * @type {Object}
      */
     var replacements = {},
+!(function( name, context, definition ) {
+
+  if (typeof module != 'undefined' && module.exports) {
+      module.exports = definition(name, context);
+      return;
+  }
+
+  if (typeof define == 'function' && typeof define.amd  == 'object') {
+      define(definition);
+      return;
+  }
+  
+  // apply this[ 'Rainbow' ] for browsers window[ 'Rainbow' ].
+  // same as (fn {}());
+  context[ name ] = definition(name, context);
+
+}( 'Rainbow', this, function( name, context ) {
+
+// this is executed in line 36.
+//window['Rainbow'] = (function() {
 
         /**
          * an array of start and end positions of blocks to be replaced
@@ -754,7 +773,9 @@ window['Rainbow'] = (function() {
             _highlight(arguments[0], arguments[1]);
         }
     };
-}) ();
+//}) ();
+
+}));
 
 /**
  * adds event listener to start highlighting
